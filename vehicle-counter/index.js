@@ -6,7 +6,8 @@ let countTotal = 0;
 let ScooterCount = document.getElementById("scooter-count");
 let CarCount = document.getElementById("car-count");
 let TruckCount = document.getElementById("truck-count");
-let prevRecord = document.getElementById("last-entry");
+
+let saveEl = document.getElementById("save-el");
 
 function Scooter() {
   countScooter += 1;
@@ -30,11 +31,7 @@ function Total() {
   countScooter = 0;
   countCar = 0;
   countTruck = 0;
-  showPrevEntries();
-}
 
-function showPrevEntries() {
-  let time = new Date().toDateString();
-  prevRecord.textContent += time + "    " + count;
-  countTotal = 0;
+  let countStr = countTotal + " - ";
+  saveEl.textContent += countStr;
 }
